@@ -26,7 +26,9 @@ const createUser = expressAsyncHandler(async (req, res) => {
         new ApiResponse({message:"user registered successfully" ,data:userResponseData})
     );
     } else {
+      res.json(
       new ApiResponse({message:"user already registered" ,status:"failed"})
+    );
     }
   } catch (error) {
     console.log(error)
