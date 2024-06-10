@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt")
 
 // Declare the Schema of the Mongo model
 var userSchema = new mongoose.Schema({
-   
     email:{
         type:String,
         required:true,
@@ -14,10 +13,21 @@ var userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    fullName:{
+        type:String,
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false // Set a default value if needed
+    },
     profile: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Profile'
-    }
+    },
+    projects:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project'
+    }]
 },
 { timestamps: true },
 );

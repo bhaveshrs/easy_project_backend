@@ -2,10 +2,8 @@ const mongoose = require('mongoose'); // Erase if already required
 
 // Declare the Schema of the Mongo model
 var profileSchema = new mongoose.Schema({
-    fullName:{
+    gender:{
         type:String,
-        required:true,
-      
     },
     phoneNumber:{
         type:String,
@@ -34,11 +32,16 @@ var profileSchema = new mongoose.Schema({
     yearOfGraduation:{
         type:String,
     },
-    user: {
+    image:{
+        type : String,
+        require:true
+    },
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
-    }
+    },
+   
 });
 
 //Export the model

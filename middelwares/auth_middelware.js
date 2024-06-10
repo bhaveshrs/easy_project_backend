@@ -24,6 +24,7 @@ const checkAuthenticity = expressAsyncHandler((req, res , next)=>{
       console.log(decoded);
       next();
     } catch (error) {
+      
       // console.log(error)
       throw new Error("user Not Authorize")
             
